@@ -1,6 +1,8 @@
 package models
 
 import (
+	"time"
+
 	"github.com/dungly116/CRUD/pkg/config"
 	"github.com/jinzhu/gorm"
 )
@@ -9,9 +11,23 @@ var db *gorm.DB
 
 type Loan struct {
 	gorm.Model
-	user_id   int64  `gorm:""json:"user_id"`
-	agency_id int64  `json:"agency_id`
-	code      string `json:"code"`
+	User_id         uint64     `json:"user_id"`
+	Agency_id       uint64     `json:"agency_id"`
+	Code            string     `json:"code"`
+	Amount          uint64     `json:"amount"`
+	Tip             uint64     `json:"tip"`
+	Money_paid      uint64     `json:"money_paid"`
+	Money_punish    uint64     `json:"money_punish"`
+	Loan_purpose    string     `json:"loan_purpose"`
+	Due_date        *time.Time `json:"due_date"`
+	Due_at          *time.Time `json:"due_at"`
+	Message_code    string     `json:"message_code"`
+	Contract_number string     `json:"contract_number"`
+	Loan_consumer   uint64     `json:"loan_consumer"`
+	Create_at       *time.Time `json:"create_at"`
+	Err_code        *time.Time `json:"err_code"`
+	Hash            string     `json:"hash"`
+	Request_id      string     `json:"request_id"`
 }
 
 func init() {

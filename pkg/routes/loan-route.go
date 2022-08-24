@@ -8,7 +8,7 @@ import (
 var AddLoanRoutes = func(router *mux.Router) {
 	router.HandleFunc("/loan/", controllers.CreateLoan).Methods("POST")
 	router.HandleFunc("/loan/", controllers.GetLoan).Methods("GET")
-	router.HandleFunc("/loan/{loanID}", controllers.GetLoanByID).Methods("GET")
-	router.HandleFunc("loan/{loanID}", controllers.UpdateLoanByID).Methods("PUT")
-	router.HandleFunc("loan/{loanID}", controllers.DeleteLoanByID).Methods("DELETE")
+	router.HandleFunc("/loan/{loanId}", controllers.GetLoanByID).Methods("GET")
+	router.HandleFunc("/loan/{loanId}", controllers.UpdateLoanByID).Methods("PUT")
+	router.HandleFunc("/loan/{loanId}", controllers.DeleteLoanByID).Methods("DELETE")
 }
